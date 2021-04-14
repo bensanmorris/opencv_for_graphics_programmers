@@ -2,6 +2,11 @@
 
 A course on OpenCV for graphics programmers.
 
+# Prerequisites
+
+- Linux (I'm using Ubuntu 18.04)
+- (On Ubuntu) gtk `sudo apt-get install libgtk2.0-dev`
+
 # Lesson 1 - Building OpenCV
 
 ```
