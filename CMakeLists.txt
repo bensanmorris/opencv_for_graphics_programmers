@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 include(FetchContent)
-project(cv_cmake)
+project(cv_for_everyone)
 
 # opencv
 set(BUILD_opencv_world ON)
@@ -47,6 +47,6 @@ set(OPENCV_INCLUDE_DIRS
 	${OpenCV_SOURCE_DIR}/modules/world/include)
 
 # app
-add_executable(cv_cmake main.cpp)
-target_link_libraries(cv_cmake PRIVATE opencv_world)
-target_include_directories(cv_cmake PRIVATE ${OPENCV_INCLUDE_DIRS})
+add_executable(lesson1 main.cpp)
+target_link_libraries(lesson1 PRIVATE opencv_world)
+target_include_directories(lesson1 PRIVATE ${OPENCV_INCLUDE_DIRS})
