@@ -7,7 +7,7 @@ A course on OpenCV for graphics programmers.
 - Linux (I'm using Ubuntu 18.04)
 - gtk: `sudo apt-get install libgtk2.0-dev`
 - CMake: `sudo apt-get install cmake`
-- gcc: `sudo apt install build-essential`
+- gcc: `sudo apt-get install build-essential`
 
 # Lesson 1 - Building OpenCV
 Let's build a minimal OpenCV and a small test application that will activate your laptop's camera and start grabbing video frames:
