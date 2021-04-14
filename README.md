@@ -10,8 +10,7 @@ A course on OpenCV for graphics programmers.
 - gcc: `sudo apt install build-essential`
 
 # Lesson 1 - Building OpenCV
-I've provided a minimal CMakeLists.txt file to build OpenCV and a small test application that will activate your laptop's camera and start grabbing video frames.
-
+Let's build a minimal OpenCV and a small test application that will activate your laptop's camera and start grabbing video frames:
 ```
 git clone https://github.com/bensanmorris/opencv_for_graphics_programmers.git
 cd opencv_for_graphics_programmers
