@@ -1,6 +1,6 @@
 # TLDR
 
-A course on OpenCV for graphics programmers.
+A course on OpenCV for everyone.
 
 # Prerequisites
 
