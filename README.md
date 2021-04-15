@@ -4,18 +4,35 @@ A course on OpenCV for everyone.
 
 # Prerequisites
 
-- Linux (I'm using Ubuntu 18.04)
+(Linux - Ubuntu 18.04)
+
 - gtk: `sudo apt-get install libgtk2.0-dev`
 - CMake: `sudo apt-get install cmake`
 - gcc: `sudo apt-get install build-essential`
 - git: `sudo apt-get install git`
 
+(Windows)
+
+- [CMake](https://cmake.org/download/)
+- Visual Studio 2017
+
 # Lesson 1 - Building OpenCV
 Let's build a minimal OpenCV and a small test application that will activate your laptop's camera and start grabbing video frames:
+
+Linux:
 ```
 git clone https://github.com/bensanmorris/opencv_for_graphics_programmers.git
 cd opencv_for_graphics_programmers
 cmake -G "Unix Makefiles" -B build .
+cd build
+cmake --build . --config Release
+./bin/lesson1
+```
+Windows:
+```
+git clone https://github.com/bensanmorris/opencv_for_graphics_programmers.git
+cd opencv_for_graphics_programmers
+cmake -B build -G "Visual Studio 15 2017" -A x64 .
 cd build
 cmake --build . --config Release
 ./bin/lesson1
