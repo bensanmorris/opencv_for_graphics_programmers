@@ -21,32 +21,24 @@ FetchContent_Declare(opencv
     GIT_TAG        "4.5.2"
 )    
 FetchContent_MakeAvailable(opencv)
-set(OPENCV_INCLUDE_DIRS 
-	${CMAKE_CURRENT_BINARY_DIR} 
-	${OpenCV_SOURCE_DIR}/include
-	${OpenCV_SOURCE_DIR}/modules/calib3d/include
-	${OpenCV_SOURCE_DIR}/modules/core/include
-	${OpenCV_SOURCE_DIR}/modules/dnn/include
-	${OpenCV_SOURCE_DIR}/modules/features2d/include
-	${OpenCV_SOURCE_DIR}/modules/flann/include
-	${OpenCV_SOURCE_DIR}/modules/gapi/include
-	${OpenCV_SOURCE_DIR}/modules/highgui/include
-	${OpenCV_SOURCE_DIR}/modules/imgcodecs/include
-	${OpenCV_SOURCE_DIR}/modules/imgproc/include
-	${OpenCV_SOURCE_DIR}/modules/java/include
-	${OpenCV_SOURCE_DIR}/modules/js/include
-	${OpenCV_SOURCE_DIR}/modules/ml/include
-	${OpenCV_SOURCE_DIR}/modules/objc/include
-	${OpenCV_SOURCE_DIR}/modules/objdetect/include
-	${OpenCV_SOURCE_DIR}/modules/photo/include
-	${OpenCV_SOURCE_DIR}/modules/python/include
-	${OpenCV_SOURCE_DIR}/modules/stitching/include
-	${OpenCV_SOURCE_DIR}/modules/ts/include
-	${OpenCV_SOURCE_DIR}/modules/video/include
-	${OpenCV_SOURCE_DIR}/modules/videoio/include
-	${OpenCV_SOURCE_DIR}/modules/world/include)
 
-# app
+# collect the opencv include dirs
+macro(collect_include_dirs result curdir)
+    file(GLOB children RELATIVE ${curdir} ${curdir}/*)
+    set(dirlist "")
+    foreach(child ${children})
+        if(IS_DIRECTORY ${curdir}/${child})
+            list(APPEND dirlist ${curdir}/${child}/include)
+        endif()
+    endforeach()
+    set(${result} ${dirlist})
+endmacro()
+collect_include_dirs(OPENCV_INCLUDE_DIRS ${OpenCV_SOURCE_DIR}/modules)
+list(APPEND OPENCV_INCLUDE_DIRS 
+	${CMAKE_CURRENT_BINARY_DIR}
+    ${OpenCV_SOURCE_DIR}/include)
+
+# lesson 1 app
 add_executable(lesson1 main.cpp)
 target_link_libraries(lesson1 PRIVATE opencv_world)
 target_include_directories(lesson1 PRIVATE ${OPENCV_INCLUDE_DIRS})
