@@ -34,9 +34,7 @@ macro(collect_include_dirs result curdir)
     set(${result} ${dirlist})
 endmacro()
 collect_include_dirs(OPENCV_INCLUDE_DIRS ${OpenCV_SOURCE_DIR}/modules)
-list(APPEND OPENCV_INCLUDE_DIRS 
-	${CMAKE_CURRENT_BINARY_DIR}
-    ${OpenCV_SOURCE_DIR}/include)
+list(APPEND OPENCV_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR} ${OpenCV_SOURCE_DIR}/include)
 
 # lesson 1 app
 add_executable(lesson1 main.cpp)
