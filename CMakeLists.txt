@@ -4,6 +4,7 @@ project(cv_for_everyone)
 
 # opencv
 set(BUILD_opencv_world ON)
+set(BUILD_SHARED_LIBS OFF)
 set(BUILD_ANDROID_EXAMPLES OFF)
 set(BUILD_DOCS OFF)
 set(BUILD_EXAMPLES OFF)
