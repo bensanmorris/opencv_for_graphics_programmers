@@ -1,6 +1,6 @@
 # TLDR
 
-A course on OpenCV for everyone.
+A course on OpenCV for everyone with an emphasis on performance and optimisation.
 
 # Prerequisites
 
