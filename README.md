@@ -37,6 +37,10 @@ cd build
 cmake --build . --config Release
 ./bin/Release/lesson1
 ```
+If all goes well you should see a window displaying your webcam output:
+
+![](lesson1.png)
+
 The OpenCV library build is customisable. Above we built what is referred to as a "static" build of OpenCV (as opposed to dynamic). This means that the OpenCV library routines are built into our OpenCV applications for ease of portability. In future lessons (when we look at combining OpenCV and Tensorflow, we will be using a dynamic build of OpenCV which is controlled via the OpenCV build option BUILD_SHARED_LIBS and associated rpath issues - rpath being the mechanism through which an executable locates its shared libraries on linux). If you want to explore OpenCV build options and play with them then simply:
 ```
 grep -lr OCV_OPTION *
