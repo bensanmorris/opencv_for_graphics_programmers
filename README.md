@@ -23,3 +23,8 @@ The OpenCV library build is customisable. Above we built what is referred to as 
 ```
 grep -lr OCV_OPTION *
 ```
+
+And then add the option and its value to the top of this lesson's CMakeLists.txt file eg:
+```
+set(BUILD_SHARED_LIBS ON)
+```
