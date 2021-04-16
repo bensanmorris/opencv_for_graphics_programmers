@@ -1,6 +1,6 @@
 # TLDR
 
-A course on OpenCV for everyone with an emphasis on performance and optimisation.
+Originally this was going to introduce OpenCV to people already familiar with graphics programming but has since changed to also include those with no prior graphics programming experience (so ignore the repo's title as no prior knowledge is assumed).
 
 # Prerequisites
 
