@@ -50,6 +50,7 @@ And then add the option and its value to the top of this lesson's CMakeLists.txt
 ```
 set(BUILD_SHARED_LIBS ON)
 ```
+## Building OpenCV on Android
 
 If you're interested in building OpenCV on Android (on a linux host) then follow the instructions below.
 
@@ -57,11 +58,19 @@ Android (Linux host):
 ```
 git clone https://github.com/bensanmorris/opencv_for_graphics_programmers.git
 cd opencv_for_graphics_programmers
-export ANDROID_SDK_ROOT=/home/ben/Android/Sdk <-- modify as appropriate
-export ANDROID_NDK_HOME=/home/ben/Android/Sdk/ndk/18.1.5063045 <-- modify as appropriate
+```
+Modify as appropriate (to point to your Android SDK / NDK locations specifying the desired target architecture):
+```
+export ANDROID_VERSION=26
+export ANDROID_SDK_ROOT=/home/ben/Android/Sdk
+export ANDROID_NDK_HOME=/home/ben/Android/Sdk/ndk/18.1.5063045
+export arch=armeabi-v7a
+```
+Then build:
+```
 mkdir build_android
 cd build_android
-export arch=armeabi-v7a <-- modify as appropriate
-cmake .. -DCMAKE_BUILD_TYPE=$buildType -DCMAKE_SYSTEM_NAME=Android -DCMAKE_SYSTEM_VERSION=26 -DCMAKE_ANDROID_NDK=$ANDROID_NDK_HOME -DCMAKE_ANDROID_ARCH_ABI=$arch -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=clang -DCMAKE_ANDROID_STL_TYPE=c++_shared -DBUILD_JAVA=OFF -DBUILD_ANDROID_EXAMPLES=OFF
+
+cmake .. -DCMAKE_BUILD_TYPE=$buildType -DCMAKE_SYSTEM_NAME=Android -DCMAKE_SYSTEM_VERSION=${ANDROID_VERSION} -DCMAKE_ANDROID_NDK=$ANDROID_NDK_HOME -DCMAKE_ANDROID_ARCH_ABI=$arch -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=clang -DCMAKE_ANDROID_STL_TYPE=c++_shared -DBUILD_JAVA=OFF -DBUILD_ANDROID_EXAMPLES=OFF
 cmake --build . --config Release
 ```
