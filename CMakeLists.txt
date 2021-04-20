@@ -30,7 +30,10 @@ endmacro()
 collect_include_dirs(OPENCV_INCLUDE_DIRS ${OpenCV_SOURCE_DIR}/modules)
 list(APPEND OPENCV_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR} ${OpenCV_SOURCE_DIR}/include)
 
-# lesson 1 app
+# lesson 1
 add_executable(lesson1 main.cpp)
 target_link_libraries(lesson1 PRIVATE opencv_world)
 target_include_directories(lesson1 PRIVATE ${OPENCV_INCLUDE_DIRS})
+
+# lesson 2
+add_subdirectory(lesson2)
